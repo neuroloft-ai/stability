@@ -1,0 +1,7 @@
+{
+  "sut_model": "o4-mini",
+  "provider": "openai",
+  "dataset": "gsm8k_symbolic100",
+  "threshold": 0.8,
+  "n_responses": 4773
+}

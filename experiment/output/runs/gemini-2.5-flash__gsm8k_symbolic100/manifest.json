@@ -1,0 +1,7 @@
+{
+  "sut_model": "gemini-2.5-flash",
+  "provider": "gemini",
+  "dataset": "gsm8k_symbolic100",
+  "threshold": 0.8,
+  "n_responses": 4773
+}

@@ -1,0 +1,10 @@
+# Core (reproduce the results)
+openai>=1.0
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+
+# Optional — only for the local cross-encoder NLI gate (generator/nli_gate.py).
+# The paper used an LLM judge for meaning preservation, so these are not required.
+# transformers>=4.40
+# torch>=2.0

@@ -1,0 +1,8 @@
+{
+  "sut_model": "phi4-mini",
+  "provider": "local",
+  "dataset": "gsm8k_symbolic100",
+  "threshold": 0.8,
+  "n_responses": 4773,
+  "note": "phi-4-mini run with chain-of-thought prompting (paper: phi4-mini)"
+}

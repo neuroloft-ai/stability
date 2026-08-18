@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+*.egg-info/
+.env
+
+# API keys — never commit
+doc/
+
+# The full 100-seed benchmark IS shipped: the generated suite and the four models'
+# scored results (eval.csv + metrics), so results_walkthrough.ipynb is self-contained.
+# Only ignore the throwaway baseline copy and any extra/ad-hoc runs not part of the paper.
+experiment/output/run_base.csv
+experiment/output/runs/llama-3.3-70b__*
+
+# Backup copies from in-place edits — not meant for publication
+*.renumber_bak
+*.predrop_bak
+*.prefix_bak
