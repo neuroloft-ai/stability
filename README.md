@@ -71,10 +71,29 @@ required to reproduce the results.
 
 ## API keys
 
-The run scripts call hosted models and an LLM judge. Provide credentials in a `doc/` folder
-the scripts read (e.g. `doc/Key_o.txt` for OpenAI), or adapt the `PROVIDERS` block in
-`experiment/run_sut_model.py` to read from environment variables. **Never commit keys** —
-`doc/` is git-ignored.
+The run scripts call hosted models and an LLM judge — you'll need at least an OpenAI key
+(generation, judging, and the `gpt-4o-mini`/`o4-mini` SUTs all use it). Set it up **one of
+two ways**:
+
+1. **Environment variable** (preferred) — `export OPENAI_API_KEY="sk-..."` before running.
+   Used by `example.py`, `generate.py`, and the notebooks.
+2. **`doc/` folder** — create a `doc/` directory at the repo root (it's git-ignored, so
+   anything you put there never gets committed) and drop in a plain-text file with just the
+   key string, no quotes or newline needed beyond the key itself:
+
+   | Provider | File | Used by |
+   |---|---|---|
+   | OpenAI | `doc/Key_o.txt` | generation, judging, `gpt-4o-mini` / `o4-mini` SUTs |
+   | Groq | `doc/Key_g.txt` | `llama-3.3-70b` (or any Groq-hosted SUT) |
+   | Gemini | `doc/Key_go.txt` | `gemini-2.5-flash` (or any Gemini SUT) |
+
+   You only need the files for the providers/models you actually run — e.g. running the
+   OpenAI models only needs `doc/Key_o.txt`. `phi4-mini` runs locally via Ollama and needs
+   no key at all.
+
+`experiment/run_sut_model.py`'s `PROVIDERS` dict is where these are wired up if you want to
+add another OpenAI-compatible provider. **Never commit keys** — `doc/` and `.env` are both
+git-ignored, so keep credentials there and nowhere else in the repo.
 
 ---
 
