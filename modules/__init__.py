@@ -18,7 +18,6 @@ eval_all         : eval_all()            — unified evaluator: routes per row +
 compute_metrics  : compute_metrics()      — behavioural metrics (SR, CP, SS, CS, Osc)
                    MetricsResult          — result dataclass
 display_metrics  : display_metrics()      — rich notebook display of MetricsResult
-qualify_metrics  : qualify_metrics()      — enrich stress metrics with bands, profile, recommendations
 """
 from .data_intake      import load_data, DataIntakeResult
 from .test_generator   import get_available_tests, get_test_specs, generate_tests
@@ -29,7 +28,6 @@ from .eval_all         import eval_all
 from .compute_metrics  import compute_metrics, MetricsResult
 from .display_metrics  import display_metrics
 from .stress_metrics   import compute_stress_metrics, plot_stress_scatter, plot_score_stability_bars, compute_sr
-from .qualify_metrics  import qualify_metrics
 
 __all__ = [
     "load_data", "DataIntakeResult",
@@ -42,5 +40,4 @@ __all__ = [
     "compute_metrics", "MetricsResult",
     "display_metrics",
     "compute_stress_metrics", "plot_stress_scatter", "plot_score_stability_bars", "compute_sr",
-    "qualify_metrics",
 ]
