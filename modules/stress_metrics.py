@@ -344,7 +344,7 @@ def plot_stress_scatter(
             return str(v)
 
     groups = sorted(df[col].unique(), key=_sort_key)
-    palette = plt.cm.get_cmap("tab10", len(groups))
+    palette = plt.colormaps.get_cmap("tab10")
     color_map = {g: palette(i) for i, g in enumerate(groups)}
 
     # ── X threshold default ───────────────────────────────────────────────────
@@ -785,7 +785,7 @@ def plot_category_stability(
         return None
 
     # ── Colours ──────────────────────────────────────────────────────────────
-    palette = plt.cm.get_cmap("tab10", max(len(selected), 1))
+    palette = plt.colormaps.get_cmap("tab10")
     cat_colors = {c: palette(i) for i, c in enumerate(selected)}
 
     BG        = bg_color
